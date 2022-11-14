@@ -20,7 +20,7 @@ public class Exercise3_2 {
         }
 
         for(String c: a){
-            System.out.println(c);
+            System.out.println("[" + a.indexOf(c) + "] " + c);
         }
     }
 }
