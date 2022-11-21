@@ -3,10 +3,10 @@ package lecture04;
 import java.util.ArrayList;
 
 public class ATM {
-    private ArrayList<Account> accountList = new ArrayList<>();
+    private ArrayList<Account> accountList;
 
     public ATM(){
-        accountList.add(new Account("あいうえお", "11111"));
+        this.accountList = new ArrayList<>();
     }
 
     public void registerAccount(String name, String number){
@@ -31,7 +31,7 @@ public class ATM {
     public void deposit(String number, long money){
         for(Account account: accountList){
             if(account.getNumber() == number){
-                account.setBalance(money);
+                account.setBalance(account.getBalance() + money);
                 System.out.println("口座番号:" + account.getNumber() + " に " + money + " 円入金しました。");
             }
         }
